@@ -1,3 +1,4 @@
+import Cart from '../components/Store/Cart';
 import ProductsList from '../components/Store/ProductsList'
 
 const Store = () => {
@@ -42,7 +43,7 @@ const Store = () => {
   return (
     <div>
      <ProductsList products={productsArr}/>
-     
+     <Cart/>
     </div>
   );
 };
