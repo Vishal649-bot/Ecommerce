@@ -1,11 +1,11 @@
-
+import Data from "../components/About/Data";
 
 const About = () => {
   return (
-    <div>
-      <h1>about</h1>
-    </div>
-  )
-}
+    <>
+  <Data/>
+    </>
+  );
+};
 
-export default About
+export default About;
