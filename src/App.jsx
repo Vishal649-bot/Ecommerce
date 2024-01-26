@@ -5,12 +5,14 @@ import Home from './pages/Home';
 import Store from './pages/Store';
 import NavBar from './components/Navbar';
 import About from './pages/About';
+import { MyContextProvider } from './MyContext';
 
 
 function App() {
 
   return (
     <>
+    <MyContextProvider>
     <Router>
       <NavBar />
       <Routes>
@@ -19,6 +21,7 @@ function App() {
         <Route path="/about" element={<About />} />
       </Routes>
     </Router>
+    </MyContextProvider>
     </>
   )
 }

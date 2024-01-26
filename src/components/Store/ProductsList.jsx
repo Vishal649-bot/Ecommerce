@@ -1,8 +1,16 @@
+import  { useContext} from 'react';
+
+import { MyContext } from "../../MyContext";
 
 const ProductsList = ({products}) => {
-    console.log('====================================');
-    console.log(products);
-    console.log('====================================');
+    const {
+        cartItems,
+        updateCartItems
+     } = useContext(MyContext);
+
+     const handleAddToCart =(product)=>{
+        updateCartItems([...cartItems,product])
+     }
   return (
     <div>
     <h2>Products</h2>
@@ -12,6 +20,7 @@ const ProductsList = ({products}) => {
           <h3>{product.title}</h3>
           <img src={product.imageUrl} alt={product.title} />
           <p>Price: ${product.price}</p>
+          <button onClick={() => handleAddToCart(product)}>Add to Cart</button>
         </li>
       ))}
     </ul>

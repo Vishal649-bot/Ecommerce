@@ -1,55 +1,60 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import { MyContext } from '../../MyContext';
 
 function Cart() {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const {
+    cartItems,
+    updateCartItems
+ } = useContext(MyContext)
 
-  const [cartElements, setCartElements] = useState([
+  // const [cartElements, setCartElements] = useState([
 
-    {
+  //   {
     
-    title: 'Colors',
+  //   title: 'Colors',
     
-    price: 100,
+  //   price: 100,
     
-    imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%201.png',
+  //   imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%201.png',
     
-    quantity: 2,
+  //   quantity: 2,
     
-    },
+  //   },
     
-    {
+  //   {
     
-    title: 'Black and white Colors',
+  //   title: 'Black and white Colors',
     
-    price: 50,
+  //   price: 50,
     
-    imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%202.png',
+  //   imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%202.png',
     
-    quantity: 3,
+  //   quantity: 3,
     
-    },
+  //   },
     
-    {
+  //   {
     
-    title: 'Yellow and Black Colors',
+  //   title: 'Yellow and Black Colors',
     
-    price: 70,
+  //   price: 70,
     
-    imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%203.png',
+  //   imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%203.png',
     
-    quantity: 1,
+  //   quantity: 1,
     
-    }
+  //   }
     
-    ])
+  //   ])
     
   const handleRemove = (title) => {
-    setCartElements((prevCartElements) =>
+    updateCartItems((prevCartElements) =>
       prevCartElements.filter((item) => item.title !== title)
     );
   };
@@ -66,7 +71,7 @@ function Cart() {
         </Modal.Header>
         <Modal.Body>
         <ul>
-        {cartElements.map((cartItem) => (
+        {cartItems.map((cartItem) => (
           <li key={cartItem.title}>
             <h3>{cartItem.title}</h3>
             <img src={cartItem.imageUrl} height='100px' width='100px' alt={cartItem.title} />
