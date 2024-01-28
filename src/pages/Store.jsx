@@ -1,9 +1,11 @@
-import Cart from '../components/Store/Cart';
-import ProductsList from '../components/Store/ProductsList'
+import Cart from "../components/Store/Cart";
+import ProductsList from "../components/Store/ProductsList";
+import Product from "./Product";
 
 const Store = () => {
   const productsArr = [
     {
+      id: 1,
       title: "Colors",
 
       price: 100,
@@ -13,6 +15,7 @@ const Store = () => {
     },
 
     {
+      id: 2,
       title: "Black and white Colors",
 
       price: 50,
@@ -22,6 +25,7 @@ const Store = () => {
     },
 
     {
+      id: 3,
       title: "Yellow and Black Colors",
 
       price: 70,
@@ -31,6 +35,7 @@ const Store = () => {
     },
 
     {
+      id: 4,
       title: "Blue Color",
 
       price: 100,
@@ -42,8 +47,9 @@ const Store = () => {
 
   return (
     <div>
-     <ProductsList products={productsArr}/>
-     <Cart/>
+      <ProductsList products={productsArr} />
+      <Cart />
+      <Product obj={productsArr} />
     </div>
   );
 };

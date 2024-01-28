@@ -7,6 +7,7 @@ import NavBar from './components/Navbar';
 import About from './pages/About';
 import { MyContextProvider } from './MyContext';
 import Contact from './pages/Contact';
+import ProductDetail from './pages/Product';
 
 
 function App() {
@@ -17,10 +18,11 @@ function App() {
     <Router>
       <NavBar />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home />}  />
         <Route path="/store" element={<Store />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/product/:productId" element={<ProductDetail />} />
       </Routes>
     </Router>
     </MyContextProvider>
