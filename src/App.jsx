@@ -8,6 +8,7 @@ import About from './pages/About';
 import { MyContextProvider } from './MyContext';
 import Contact from './pages/Contact';
 import ProductDetail from './pages/Product';
+import LoginPage from './pages/Login';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Route path="/store" element={<Store />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/login" element={<LoginPage />} />
         <Route path="/product/:productId" element={<ProductDetail />} />
       </Routes>
     </Router>
