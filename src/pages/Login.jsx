@@ -1,13 +1,17 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import classes from "../components/Login/AuthForm.module.css";
+import AuthContext from '../MyContext2';
 
 const Login = () => {
     const navigate = useNavigate();
     const emailInputRef = useRef();
     const passwordInputRef = useRef();
+    const authctx = useContext(AuthContext)
+
     const [isLogin, setIsLogin] = useState(true);
     const [isLoading, setIsLoading] = useState(false);
+    
 
     const switchAuthModeHandler = () => {
         setIsLogin((prevState) => !prevState);
@@ -48,6 +52,7 @@ const Login = () => {
                 });
             }
         }).then(data => {
+            authctx.login(data.idToken)
             navigate('/store'); // Redirect to store page
             console.log(data);
         }).catch(err => {

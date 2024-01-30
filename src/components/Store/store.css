@@ -1,0 +1,58 @@
+/* store.css */
+
+/* Style for the container of the Store component */
+.store-container {
+    max-width: 1200px; /* Adjust the maximum width of the container */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 20px; /* Add padding around the container */
+  }
+  
+  /* Style for the ProductsList component */
+  .products-list {
+    list-style: none; /* Remove default list styles */
+    padding: 0; /* Remove default padding */
+  }
+  
+  /* Style for each product item in the ProductsList */
+  .product-item {
+    margin-bottom: 20px; /* Add space below each product item */
+    padding: 10px; /* Add padding around each product item */
+    border: 1px solid #ddd; /* Add a light gray border */
+    border-radius: 5px; /* Rounded corners */
+  }
+  
+  /* Style for the product title */
+  .product-title {
+    margin-top: 0; /* Remove default margin */
+    margin-bottom: 10px; /* Add space below the title */
+    font-size: 18px; /* Set the font size */
+    color: #333; /* Dark text color */
+  }
+  
+  /* Style for the product image */
+  .product-image {
+    max-width: 100%; /* Ensure the image does not exceed its container */
+    height: auto; /* Maintain aspect ratio */
+  }
+  
+  /* Style for the product price */
+  .product-price {
+    font-size: 16px; /* Set the font size */
+    color: #555; /* Medium-dark text color */
+  }
+  
+  /* Style for the Add to Cart button */
+  .add-to-cart-button {
+    padding: 8px 16px; /* Add padding inside the button */
+    background-color: #007bff; /* Blue button color */
+    color: #fff; /* White text color */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Show pointer cursor on hover */
+  }
+  
+  /* Style for the Add to Cart button on hover */
+  .add-to-cart-button:hover {
+    background-color: #0056b3; /* Darker blue color on hover */
+  }
+  

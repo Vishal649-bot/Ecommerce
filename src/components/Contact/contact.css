@@ -1,0 +1,53 @@
+/* contact.css */
+
+/* Style for the container of the form */
+.contact-container {
+  max-width: 400px; /* Adjust the maximum width of the container */
+  margin: 0 auto; /* Center the container horizontally */
+  padding: 20px; /* Add padding around the container */
+  background-color: #296a78;/* Light gray background color */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a 
+  subtle shadow */
+  margin-top: 100px;
+}
+
+/* Style for the form heading */
+.form-heading {
+  margin-bottom: 20px; /* Add space below the heading */
+  text-align: center; /* Center align the heading */
+  color: #f1f1f1; /* Dark text color */
+}
+
+/* Style for form labels */
+.form-label {
+  display: block; /* Display labels as blocks */
+  margin-bottom: 6px; /* Add space below each label */
+  color: #ffffff; /* Medium-dark text color */
+  font-weight: bold;
+}
+
+/* Style for form inputs */
+.form-input {
+  width: 100%; /* Set input width to 100% */
+  padding: 10px; /* Add padding inside the input */
+  margin-bottom: 16px; /* Add space below each input */
+  border: 1px solid #ccc; /* Add a light gray border */
+  border-radius: 4px; /* Rounded corners */
+}
+
+/* Style for the submit button */
+.submit-button {
+  width: 100%; /* Set button width to 100% */
+  padding: 12px; /* Add padding inside the button */
+  background-color: #007bff; /* Blue button color */
+  color: #fff; /* White text color */
+  border: none; /* No border */
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer; /* Show pointer cursor on hover */
+}
+
+/* Style for the submit button on hover */
+.submit-button:hover {
+  background-color: #0056b3; /* Darker blue color on hover */
+}

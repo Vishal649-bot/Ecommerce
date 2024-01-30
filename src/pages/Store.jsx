@@ -1,7 +1,7 @@
 import Cart from "../components/Store/Cart";
 import ProductsList from "../components/Store/ProductsList";
 import Product from "./Product";
-
+import "../components/Store/store.css"
 const Store = () => {
   const productsArr = [
     {

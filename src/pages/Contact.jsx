@@ -1,4 +1,6 @@
-import {useState} from 'react'
+import { useState } from 'react';
+import '../components/Contact/contact.css';
+
 const Contact = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -27,12 +29,13 @@ const Contact = () => {
     };
   
     return (
-      <div>
-        <h2>User Data Form</h2>
+      <div className="contact-container">
+        <h2 className="form-heading">User Data Form</h2>
         <form onSubmit={handleSubmit}>
           <div>
-            <label htmlFor="name">Name:</label>
+            <label className="form-label" htmlFor="name">Name:</label>
             <input
+              className="form-input"
               type="text"
               id="name"
               value={name}
@@ -40,8 +43,9 @@ const Contact = () => {
             />
           </div>
           <div>
-            <label htmlFor="email">Email ID:</label>
+            <label className="form-label" htmlFor="email">Email ID:</label>
             <input
+              className="form-input"
               type="text"
               id="email"
               value={email}
@@ -49,18 +53,19 @@ const Contact = () => {
             />
           </div>
           <div>
-            <label htmlFor="phone">Phone Number:</label>
+            <label className="form-label" htmlFor="phone">Phone Number:</label>
             <input
+              className="form-input"
               type="text"
               id="phone"
               value={phoneNumber}
               onChange={(e) => setPhoneNumber(e.target.value)}
             />
           </div>
-          <button type="submit">Submit</button>
+          <button className="submit-button" type="submit">Submit</button>
         </form>
       </div>
   )
 }
 
-export default Contact
+export default Contact;
