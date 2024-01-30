@@ -1,11 +1,12 @@
-import { useContext, useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { MyContext } from '../../MyContext';
+import axios from 'axios';
 
 function Cart() {
   const [show, setShow] = useState(false);
-
+  const [data, setData] = useState([]);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const {
@@ -13,15 +14,37 @@ function Cart() {
     updateCartItems
  } = useContext(MyContext)
 
+ useEffect(() => {
+
+  let email = localStorage.getItem('email');
+  email = email.replace(/[@.]/g, '');
+  const fetchData = async () => {
+    try {
+      const response = await axios.get(`https://crudcrud.com/api/03d678802bf84a378b1b4ea97b9d0f23/cart${email}`);
+      console.log(response);
+      // console.log(response.data);
+      setData(response.data);
+    } catch (error) {
+      console.log(error);
+    } 
+  };
+
+  fetchData();  
+ console.log('====================================');
+ console.log(data);
+ console.log('====================================');
+  
+ }, [])
+//  
 
     
   const handleRemove = (title) => {
     updateCartItems((prevCartElements) =>
       prevCartElements.filter((item) => item.title !== title)
     );
-  };
+  }; 
 
-  return (
+  return ( 
     <>
       <Button variant="primary" onClick={handleShow}>
        Cart
@@ -33,12 +56,12 @@ function Cart() {
         </Modal.Header>
         <Modal.Body>
         <ul>
-        {cartItems.map((cartItem) => (
-          <li key={cartItem.title}>
-            <h3>{cartItem.title}</h3>
-            <img src={cartItem.imageUrl} height='100px' width='100px' alt={cartItem.title} />
-            <p>Price: ${cartItem.price}</p>
-            <p>Quantity: {cartItem.quantity}</p>
+        {data.map((cartItem) => (
+          <li key={cartItem.product.title}>
+            <h3>{cartItem.product.title}</h3>
+            <img src={cartItem.product.imageUrl} height='100px' width='100px' alt={cartItem.title} />
+            <p>Price: ${cartItem.product.price}</p>
+            <p>Quantity: {cartItem.product.quantity}</p>
             <Button variant="danger" onClick={() => handleRemove(cartItem.title)}>
                   Remove
                 </Button>

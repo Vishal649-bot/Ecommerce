@@ -1,15 +1,28 @@
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { MyContext } from '../../MyContext';
-
+import axios from 'axios';
+import AuthContext from '../../MyContext2';
 const ProductsList = ({ products }) => {
     const {
         cartItems,
         updateCartItems
     } = useContext(MyContext);
+    const authCtx = useContext(AuthContext)
+    let email = localStorage.getItem('email');
+    email = email.replace(/[@.]/g, '');
 
-    const handleAddToCart = (product) => {
+    const handleAddToCart = async(product) => {
         updateCartItems([...cartItems, product]);
+
+        let obj = {
+            product: product,
+            email: email
+        }
+        // console.log(authCtx.emailid);
+        const response = await axios.post(`https://crudcrud.com/api/03d678802bf84a378b1b4ea97b9d0f23/cart${obj.email}`, obj);
+        console.log(response);
+        console.log(obj.email);
     };
 
     return (
